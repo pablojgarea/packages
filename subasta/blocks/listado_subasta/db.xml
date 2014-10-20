@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btDCListadoSubasta">
+		<field name="bID" type="I"><key /><unsigned /></field>
+
+		<field name="field_1_textbox_text" type="X"></field>
+
+		<field name="field_2_textbox_text" type="X"></field>
+
+		<field name="field_3_textbox_text" type="X"></field>
+
+		<field name="field_4_date_value" type="D"></field>
+
+		<field name="field_5_date_value" type="D"></field>
+
+
+	</table>
+</schema>

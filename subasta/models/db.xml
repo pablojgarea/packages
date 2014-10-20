@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	
+	<!--
+	Name the tables very explicitly, all with the same prefix (package name as prefix makes sense),
+	otherwise it is confusing when someone looks at the database and expects to only see C5 tables.
+	-->
+	
+	<table name="subasta">
+		<field name="id" type="I"><UNSIGNED/><KEY/><AUTOINCREMENT/></field>
+		<field name="miniatura" type="I"><UNSIGNED/></field>
+		<field name="tipo_bienes" type="C" size="255"><NOTNULL/></field>
+		<field name="localizacion" type="C" size="255"><NOTNULL/></field>
+		<field name="estado" type="C" size="255"><NOTNULL/></field>
+		<field name="fecha" type="T"><NOTNULL/><DEFTIMESTAMP/></field>
+		<field name="datos_subasta" type="T"><NOTNULL/></field>
+	</table>
+
+	<table name="subasta_enlace">
+		<field name="id" type="I"><UNSIGNED/><KEY/><AUTOINCREMENT/></field>
+		<field name="id_subasta" type="I"><UNSIGNED/><NOTNULL/></field>
+		<field name="titulo" type="C" size="255"><UNSIGNED/><NOTNULL/></field>
+		<field name="enlace" type="C" size="255"><UNSIGNED/><NOTNULL/></field>
+		<field name="orden" type="I"><UNSIGNED/><NOTNULL/></field>
+	</table>
+	
+	<table name="subasta_adjunto">
+		<field name="id" type="I"><UNSIGNED/><KEY/><AUTOINCREMENT/></field>
+		<field name="id_subasta" type="I"><UNSIGNED/><NOTNULL/></field>
+		<field name="titulo_adjunto" type="C" size="255"><UNSIGNED/><NOTNULL/></field>
+		<field name="adjunto" type="C" size="255"><UNSIGNED/><NOTNULL/></field>
+		<field name="orden" type="I"><UNSIGNED/><NOTNULL/></field>
+	</table>
+		
+</schema>
+
+<!-- SEE http://phplens.com/lens/adodb/docs-datadict.htm FOR XML SCHEMA DOCS -->
