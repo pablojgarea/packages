@@ -1,0 +1,24 @@
+.item.ccm-pane-body{
+	padding: 10px 10px 0 10px;
+	margin-bottom:10px;
+}
+
+.ccm-ui .form-horizontal .control-label{
+	font-weight: bold;
+}
+
+.listado-adjuntos .adjunto-subasta .input {
+	margin-left: 152px;
+}
+
+.listado-adjuntos .enlace-subasta input, .listado-adjuntos .adjunto-subasta input{
+	margin-left: 10px;
+}
+
+.borrar-enlace, .borrar-adjunto {
+	float: right;
+}
+
+div#ccm-dashboard-content .subasta{
+	margin-top: 0px;
+}

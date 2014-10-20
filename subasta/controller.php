@@ -13,7 +13,14 @@ class SubastaPackage extends Package {
      public function getPackageName() {
           return t("Subastas");
      }
-     
+     public function on_start() {
+      
+          $html = Loader::helper("html");
+          $v = View::getInstance();
+          $v->addHeaderItem($html->css("subasta.css", "subasta"));
+//          $v->addHeaderItem($html->javascript("boilerplate.js", "c5_boilerplate"));
+     }
+
      public function install() {
           $pkg = parent::install();
      
