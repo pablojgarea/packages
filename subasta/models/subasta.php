@@ -38,6 +38,67 @@ class Subasta extends Model{
 
 	}
 
+	public function search($parametros){
+
+		$db = Loader::db();
+		$sql_where = '';
+
+		foreach ($parametros as $key => $value) {
+			$sql_where .= "(".$key." LIKE '%".$value."%') AND ";
+		}
+		
+		$query = "SELECT id FROM subasta WHERE ".$sql_where." 1=1 ";
+
+		$result = $db->Execute($query);
+		$lista_subastas = array();
+
+		while ($row = $result->FetchRow()) {
+
+			$nueva_subasta = new Subasta();
+    		$nueva_subasta->loadById($row['id']);
+    		$lista_subastas[] = $nueva_subasta;
+		}
+
+		return $lista_subastas;
+
+	}
+
+
+	public function getEnlaces(){
+		$db = Loader::db();
+		Loader::model('Enlace','subasta');
+
+		$query_enlaces = "SELECT id FROM subasta_enlace WHERE id_subasta=".$this->id;
+	
+		$result = $db->Execute($query_enlaces);
+		$lista_enlaces = array();
+
+		while ($row = $result->FetchRow()) {
+			$nueva_enlace = new Enlace();
+    		$nueva_enlace->loadById($row['id']);
+    		$lista_enlaces[] = $nueva_enlace;
+		}
+
+		return $lista_enlaces;
+	}
+
+	public function getAdjuntos(){
+		$db = Loader::db();
+		Loader::model('subasta_adjunto','subasta');
+		
+		$query_adjuntos = "SELECT id FROM subasta_adjunto WHERE id_subasta=".$this->id;
+	
+		$result = $db->Execute($query_adjuntos);
+		$lista_adjuntos = array();
+
+		while ($row = $result->FetchRow()) {
+			$nueva_adjunto = new Adjunto();
+    		$nueva_adjunto->loadById($row['id']);
+    		$lista_adjuntos[] = $nueva_adjunto;
+		}
+
+		return $lista_adjuntos;
+	}
 
 	public function getMiniatura(){
 		return $this->miniatura;
