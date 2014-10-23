@@ -61,15 +61,15 @@
 	<div class="row listado-cuadros-subastas">			
 		<?php foreach ($lista_subastas as $subasta): ?>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 cuadro-subasta">
-				<div class=" miniatura ">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 miniatura ">
 				                        <?php 
                                         $imagen = File::getByID($subasta->miniatura);
                                         $ih = Loader::helper('image');
                                         $thumb = $ih->getThumbnail($imagen, 150, 150, true);
                                         ?>
-                                        <img src="<?php echo $thumb->src; ?>" width="<?php echo $thumb->width; ?>" height="<?php echo $thumb->height; ?>" alt="" />
+                                        <img src="<?php echo $thumb->src; ?>" width="<?php echo $thumb->width; ?>" height="<?php echo $thumb->height; ?>" alt="" class="img-responsive" />
 				</div>
-				<div class="datos-subasta">			
+				<div class="datos-subasta col-xs-12 col-sm-12 col-md-6 col-lg-6 ">			
 					<b>Tipo de bienes: </b><?php echo $subasta->tipo_bienes ?>
 					<br><b>Localización:</b><br><?php echo $subasta->localizacion ?>
 					<br><b>Estado: </b><?php echo $subasta->estado ?>
