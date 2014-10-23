@@ -1,0 +1,64 @@
+.miniatura {
+	margin: 5px;
+	text-align: center;
+}
+
+.cuadro-subasta {
+	padding: 5px;
+
+}
+
+
+
+.listado-enlaces a, .listado-enlaces a:hover {
+	color: #0072c1;
+	width: 100%;
+	display: block;
+	font-weight: bold;
+}
+
+.cuadro-subasta {
+	border-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 1px solid rgb(231, 231, 241);
+	margin: 5px 5px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.cuadro-subasta .listado-enlaces .adjunto {
+	background-color: rgb(231, 231, 241);
+	margin: 2px 0px;
+	padding: 2px;
+}
+
+@media (max-width: 767px){
+.cuadro-subasta .col-xs-6 {
+        width:48%;
+  }
+}
+
+
+@media (min-width: 768px){
+.cuadro-subasta .col-sm-6 {
+        width:48%;
+  }
+}
+
+@media (min-width: 992px){
+.cuadro-subasta .col-md-4 {
+        width:31.3333%;
+  }
+}
+
+
+@media (min-width: 1200px){
+.cuadro-subasta.col-lg-3 {
+        width:31.3333%;
+  }
+}
