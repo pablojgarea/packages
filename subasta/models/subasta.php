@@ -66,7 +66,7 @@ class Subasta extends Model{
 
 	public function getEnlaces(){
 		$db = Loader::db();
-		Loader::model('Enlace','subasta');
+		Loader::model('enlace','subasta');
 
 		$query_enlaces = "SELECT id FROM subasta_enlace WHERE id_subasta=".$this->id;
 	
