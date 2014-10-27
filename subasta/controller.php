@@ -30,6 +30,7 @@ class SubastaPackage extends Package {
 
           //Frontend Blocktype:
           $this->getOrInstallBlockType($pkg, 'listado_subasta');
+          $this->getOrInstallBlockType($pkg, 'calendario_bootstrap');
 
      }
 
